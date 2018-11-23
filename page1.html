@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Лисяндрабанк онлайн</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="page1.css" />
+    <script src="main.js"></script>
+</head>
+
+<body class="general-layout">
+
+    <header class="headline">
+        <div class="headline__information">
+            <h2>Индивидуальный предприниматель
+                Швецова <br> Мария Вальерьевна</h2>
+            <span class="gray-text">+79193977777</span>
+            <a href="#" class="blue-link">www.mary.com</a>
+            <a href="#" class="blue-link">mary@tochka.com</a>
+            <a href="#" class="blue-link">Информация о компании</a>
+            <a href="#" class="blue-link">Показать реквизиты</a>
+        </div>
+        <div class="headline__img">
+            <img id="bird" src="./back_bird.jpg" alt="bird">
+        </div>
+    </header>
+
+    <main>
+        <section class="products">
+            <h2>О компании Индивидуальный предприниматель Мария Швецова</h2>
+            <article class="card">
+                <div class="card__img">
+                    <img class="info-img" src="./ball.jpg" alt="Кошка Деми Мурка">
+                </div>
+                <div class="card__info">
+                    <h4>Клубника на улице Рамбла</h4>
+                    <p class="lightgray-text">139,99 руб.</p>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__img">
+                    <img class="info-img" src="./palma.jpg" alt="Кошка Ева">
+                </div>
+                <div class="card__info">
+                    <h4>Золотой Пляж</h4>
+                    <p class="lightgray-text">35,89 руб.</p>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__img">
+                    <img class="info-img" src="./ball.jpg" alt="Кошка Куки">
+                </div>
+                <div class="card__info">
+                    <h4>Экскурсии</h4>
+                    <p class="lightgray-text">1000р/час</p>
+                </div>
+            </article>
+        </section>
+
+        <input type="radio" name="operations" id="pay" checked>
+        <input type="radio" name="operations" id="request-payment">
+        <input type="radio" name="cards" id="personal-bank">
+        <input type="radio" name="cards" id="another-bank">
+        <section class="bank">
+            <article class="operations">
+                <label for="pay">Заплатить</label>
+                <label for="request-payment">Запросить платёж</label>
+            </article>
+
+            <article class="cards">
+                <label for="another-bank">С карты любого банка</label>
+                <label for="personal-bank">Из своего интернет-банка</label>
+            </article>
+
+            <article class="page-1">
+                <!-- запросить платёж с карты любого банка -->
+                <span>
+                    Сформируйте платёжку и загрузите её
+                    в свой банк для подпии
+                </span>
+                <span class="lightgray-text">От кого</span>
+                <input type="text">
+                <span class="lightgray-text">БИК</span>
+                <input type="text">
+                <span class="lightgray-text">Номер счёта</span>
+                <input type="text">
+                <span class="lightgray-text">За что</span>
+                <input type="text">
+                <span class="lightgray-text">Сколько</span>
+                <input type="text">
+                <button class="gradient-button">
+                    Получить файл для интернет-банка
+                </button>
+                <button class="blue-text-button">
+                    Очистить форму
+                </button>
+            </article>
+
+            <article class="page-2">
+                <!-- запросить платёж с карты своего интернет банка -->
+                <span>Сумма</span>
+                <input type="text">
+                <span>Коментарий</span>
+                <input type="text">
+                <span>Ваша эл. почта</span>
+                <input type="text">
+                <button class="gradient-button">
+                    Заплатить
+                </button>
+
+            </article>
+
+            <article class="page-3">
+                <!-- заплатить -->
+                <span>Инн</span>
+                <input type="text">
+                <span>БИК</span>
+                <input type="text">
+                <span>Номер счёта</span>
+                <input type="text">
+                <span>За что</span>
+                <input type="text">
+                <input type="radio" name="nds" id="ten">
+                <input type="radio" name="nds" id="eighteen">
+                <input type="radio" name="nds" id="without">
+                <span>Сколько</span>
+                <input type="text">
+                <span>Номер телефона</span>
+                <input type="text">
+                <span>Электронная почта</span>
+                <input type="text">
+                <button class="gradient-button">
+                    Получить файл для интернет-банка
+                </button>
+                <button class="blue-text-button">
+                    Очистить форму
+                </button>
+            </article>
+        </section>
+    </main>
+
+    <footer class="contact-information">
+
+
+        <section class="full-information">
+            Испа́ния (исп. и галис. España), официально Короле́вство Испа́ния
+            (исп. и галис. Reino de España МФА [ˈreino ðe esˈpaɲa])
+            — суверенное государство на юго-западе Европы и частично
+            в Африке, член Европейского союза и НАТО.
+        </section>
+        <label class="link" for="hider" id="clickme">Показать </label>
+        <input type="checkbox" id="hider">
+        <div class="content">
+            Испа́ния (исп. и галис. España), официально Короле́вство Испа́ния
+            (исп. и галис. Reino de España МФА [ˈreino ðe esˈpaɲa])
+            — суверенное государство на юго-западе Европы и частично
+            в Африке, член Европейского союза и НАТО.
+            Испания занимает бо́льшую часть (80 %)
+            Пиренейского полуострова, а также Канарские и Балеарские острова, имеет
+            общую площадь 504 782 км² (вместе с небольшими суверенными территориями
+            на африканском побережье, городами Сеута и Мелилья), являясь четвёртой
+            по величине страной в Европе (после России, Украины и Франции).
+        </div>
+    </footer>
+</body>
+
+</html>
