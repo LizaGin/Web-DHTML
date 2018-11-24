@@ -1,3 +1,5 @@
+/* общая информация */
+
 .blue-link
 {
     text-decoration: none;
@@ -6,7 +8,7 @@
 
 .lightgray-text
 {
-    color: lightslategray;
+    color: #778899;
 }
 
 .gradient-button,
@@ -33,38 +35,51 @@
     font-size: 16px;
 }
 
-input[type='text']
+.input-p1,
+.input-p2,
+.input-p3,
+.card-input,
+.select-p3
 {
-    border: none;
-    border-bottom: 2px solid #eee;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
 }
 
-input[type='text']:focus
+input[type='text']:focus,
+.select-p3:focus
 {
     outline: none;
     cursor: pointer;
 }
 
+/* раскладка */
+
 .general-layout
 {
     display: grid;
-    grid-template: '. headline .' 300px
-        '. main . ' 500px
-        '. main . ' auto
-        '. footer .' 250px
-        /15% 70% 15%;
+    grid-template:  '. headline .' 300px
+                    '. main . ' 500px
+                    '. main . ' auto
+                    '. footer .' 250px
+                    /15% 70% 15%;
     margin: 10px 15px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     font-family: 'Helvetica', 'Trebuchet MS', sans-serif;
 }
 
+/* заголовок */
+
 .headline
 {
     display: grid;
     grid-area: headline;
-    grid-template: 'information img'
-    'horizontal-line horizontal-line'
-        /70% 30%;
+    grid-template:  'information img'
+                    'horizontal-line horizontal-line'
+                    /70% 30%;
+    border-bottom: 2px solid #d3d3d3;
+    margin: 0 0 50px 0;
 }
 
 .headline__information
@@ -72,8 +87,8 @@ input[type='text']:focus
     grid-area: information;
     display: grid;
     grid-template: 'first'
-        'second'
-        'third';
+                    'second'
+                    'third';
 }
 
 .first
@@ -91,15 +106,6 @@ input[type='text']:focus
     grid-area: third;
 }
 
-.headline__horizontal-line
-{
-    grid-area: horizontal-line;
-    display: flex;
-    height: 1px;
-    border: 1px solid #eee;
-    background-color: #eee;
-}
-
 .headline__img
 {
     grid-area: img;
@@ -113,31 +119,26 @@ input[type='text']:focus
     width: 100%;
 }
 
+/* основная информация */
+
 main
 {
     display: grid;
     grid-area: main;
-    grid-template: 'bank'
-        'products' auto
-        /auto;
+    grid-template:  'bank'
+                    'products' auto
+                    /auto;
 }
 
 .bank
 {
     display: grid;
     grid-area: bank;
-    grid-template: 'operations'
-        'date';
+    grid-template:  'operations'
+                    'date';
+    text-align: center;
+    border: 1px solid #d3d3d3;
     
-}
-
-.cards,
-.page-1,
-.page-2,
-.page-3,
-input[type='radio']
-{
-    display: none;
 }
 
 .operations
@@ -152,34 +153,7 @@ input[type='radio']
     grid-area: date;
 }
 
-input[id='request-payment']:checked ~ .bank
-{
-    grid-template: 'operations'
-    'cards'
-    'date';
-}
-
-input[id='request-payment']:checked ~ .bank .cards
-{
-    display: block;
-    grid-area: cards;
-}
-
-input[id='request-payment']:checked ~ input[id='another-bank']:checked ~.bank .page-1,
-input[id='request-payment']:checked ~ input[id='personal-bank']:checked ~.bank .page-2,
-input[id='pay']:checked ~.bank .page-3
-{
-    display: flex;
-    flex-direction: column;
-}
-
-input[id='request-payment']:checked ~ input[id='another-bank']:checked ~.bank label[for='another-bank'],
-input[id='request-payment']:checked ~ input[id='personal-bank']:checked ~.bank label[for='personal-bank'],
-input[id='pay']:checked ~.bank label[for='pay'],
-input[id='request-payment']:checked ~ .bank label[for='request-payment']
-{
-    color: #9c9c9c;
-}
+/* операции банка - кнопки */
 
 .operations__label,
 .cards__label
@@ -198,44 +172,154 @@ input[id='request-payment']:checked ~ .bank label[for='request-payment']
     font-size: 13px;
 }
 
-.info-p1
-{
-    display: flex;
-}
+/* страницы банка */
 
 .page-1 p,
 .page-2 p,
 .page-3 p
 {
-    display: flex;
-    justify-content: flex-start;
     padding: 0 30px;
+}
+
+.input-p1,
+.input-p3,
+.select-p3
+{
+    width: 350px;
+}
+
+.input-p2
+{
+    width: 150px;
+}
+
+.label-p1,
+.label-p2,
+.label-p3
+{
+    display: inline-block;
+    text-align: left;
+    width: 150px;
+    
 }
 
 .button-p1,
 .button-p2,
 .button-p3
 {
-    left: 350px;
-    width: 200px;
-    margin: 20px 0 50px 0;
-    align-self: center;
+    width: 180px;
+    margin: 20px 0 50px 30px;
 }
 
-.input-p1,
-.input-p2,
-.input-p3
+.cards,
+.page-1,
+.page-2,
+.page-3,
+input[type='radio']
 {
-    width: 70%;
-    margin-left: auto;
+    display: none;
 }
+
+/* переключение страниц банка */
+
+input[id='request-payment']:checked ~ .bank
+{
+    grid-template: 'operations'
+    'cards'
+    'date';
+}
+
+input[id='request-payment']:checked ~ .bank .cards
+{
+    display: block;
+    grid-area: cards;
+}
+
+input[id='request-payment']:checked ~ input[id='another-bank']:checked ~.bank .page-1,
+input[id='pay']:checked ~.bank .page-3
+{
+    display: flex;
+    flex-direction: column;
+}
+
+input[id='request-payment']:checked ~ input[id='personal-bank']:checked ~.bank .page-2
+{
+    display: flex;
+    justify-content: center;
+}
+
+input[id='pay']:checked ~.bank label[for='pay'],
+input[id='request-payment']:checked ~ .bank label[for='request-payment']
+{
+    color: #9c9c9c;
+}
+
+input[id='request-payment']:checked ~ input[id='another-bank']:checked ~.bank label[for='another-bank'],
+input[id='request-payment']:checked ~ input[id='personal-bank']:checked ~.bank label[for='personal-bank']
+{
+    display: block;
+    color: #9c9c9c;
+    background-color: #ececec;
+    height: 30px;
+    padding: 10px 0 0 0;
+    text-align: right;
+}
+
+/* банковская карточка на одной из страниц */
+
+.bank-card
+{
+    width: 300px;
+    display: grid;
+    grid-template:  'card-icon card-icon' 60px
+                    'card-number card-number' 30px
+                    'card-date cvc' 60px
+                    /70% 30%;
+    background-color: #e7e5e5;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px;
+    margin: 10px 0 0 30px;
+}
+
+.card-icon
+{
+    grid-area: card-icon;
+    height: 40px;
+}
+
+input[id='cvc']
+{
+    grid-area: cvc;
+    width: 80px;
+}
+
+input[id='card-date']
+{
+    grid-area: card-date;
+    width: 200px;
+}
+
+input[id='card-number']
+{
+    grid-area: card-number;
+    width: 290px;
+}
+
+.card-input
+{
+    background-color: #e7e5e5;
+    border: 1px solid #fff;
+}
+
+/* карточки товара */
 
 .products
 {
     grid-area: products;
     display: grid;
-    grid-template: 'title'
-        'items';
+    grid-template:  'title'
+                    'items';
 }
 
 .products__title
@@ -252,18 +336,13 @@ input[id='request-payment']:checked ~ .bank label[for='request-payment']
     flex-wrap: wrap;
 }
 
-.contact-information
-{
-    grid-area: footer;
-}
-
 .card
 {
-    width: 250px;
     display: inline-block;
-    border: 1px solid lightgray;
     margin: 0 0 30px 30px;
     text-align: left;
+    width: 250px;
+    border: 1px solid lightgray;
 }
 
 .card:hover
@@ -297,88 +376,79 @@ input[id='request-payment']:checked ~ .bank label[for='request-payment']
     -o-transform: scale(1.2);
 }
 
+/* подвал */
+
 .footer
 {
     grid-area: footer;
     padding: 20px;
 }
 
-.full-information
-{
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 40px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    min-width: 400px;
-}
-
-.content 
-{
-    display: none;
-    min-width: 400px;
-    margin-top: 40px;
-}
-
-#hider
+.content,
+input[id='hider'],
+input[id='hider']:checked ~ .short-content,
+input[id='hider']:checked ~ label[for='hider']
 {
     display: none;
 }
 
-#hider:checked ~ .content
+.content,
+.short-content
+{
+    min-width: 400px;
+    margin-top: 40px;
+}
+
+input[id='hider']:checked ~ .content,
+.short-content
 {
     display: flex;
     flex-wrap: wrap;
 }
 
-#hider:checked ~ .full-information,
-#hider:checked ~ #show
-{
-    display: none;
-}
-
-#show 
+label[for='hider']
 {
     text-decoration: none;
     color: blue;
     cursor: pointer;
 }
 
+/* для узкого экрана */
 
 @media screen and (max-width: 768px)
 {
-    .headline
-{
-    display: grid;
-    grid-area: headline;
-    grid-template: 'information'
-    'img'
-    'horizontal-line';
-    padding: 20px;
-}
+        .headline
+    {
+        display: grid;
+        grid-area: headline;
+        grid-template: 'information'
+        'img'
+        'horizontal-line';
+        padding: 20px;
+    }
 
-.general-layout
-{
-    display: grid;
-    grid-template: 'headline' 450px
-        ' main  ' 500px
-        ' main ' auto
-        ' footer ' 250px;
-    margin: 0;
-    box-shadow: none;
-}
+    .general-layout
+    {
+        display: grid;
+        grid-template: 'headline' 450px
+            ' main  ' 500px
+            ' main ' auto
+            ' footer ' 250px;
+        margin: 0;
+        box-shadow: none;
+    }
 
-.input-p1,
-.input-p2,
-.input-p3
-{
-    width: 60%;
-}
+    .input-p1,
+    .input-p2,
+    .input-p3
+    {
+        width: 60%;
+    }
 
-.headline__img
-{
-    width: 220px;
-    height: 150px;
-}
+    .headline__img
+    {
+        width: 220px;
+        height: 150px;
+    }
 
 }

@@ -33,7 +33,6 @@
         <div class="headline__img">
             <img class="bird" src="./back_bird.jpg" alt="bird">
         </div>
-        <div class="headline__horizontal-line"></div>
     </header>
 
     <main>
@@ -87,115 +86,129 @@
 
             <article class="cards">
                 <div class="cards__label">
-                    <label class="blue-text-button" for="another-bank">С карты любого банка</label>
+                    <label class="blue-text-button" for="another-bank">💳 С карты любого банка</label>
                 </div>
                 <div class="cards__label">
-                    <label class="blue-text-button" for="personal-bank">Из своего интернет-банка</label>
+                    <label class="blue-text-button" for="personal-bank">💳 Из своего интернет-банка</label>
                 </div>
             </article>
 
             <article class="page-1">
                 <!-- запросить платёж с карты любого банка -->
-                <p>
-                    <label for="who" class="lightgray-text label-p1">От кого</label>
-                    <input type="text" id="who" class="input-p1">
-                </p>
-                <p>
-                    <label for="bik-p1" class="lightgray-text label-p1">БИК</label>
-                    <input type="text" id="bik-p1" class="input-p1">
-                </p>
-                <p>
-                    <label for="number-p2" class="lightgray-text label-p1">Номер счёта</label>
-                    <input type="text" id="number-p2" class="input-p1">
-                </p>
-                <p>
-                    <label for="" class="lightgray-text label-p1">За что</label>
-                    <input type="text" id="" class="input-p1">
-                </p>
-                <p>
-                    <label for="summary-p1" class="lightgray-text label-p1">Сколько</label>
-                    <input type="text" id="summary-p1" class="input-p1">
-                </p>
-                <p class="info-p1">
-                    Сформируйте платёжку и загрузите её
-                    в свой банк для подпиcи
-                </p>
-                <button class="gradient-button button-p1">
-                    Получить файл для интернет-банка
-                </button>
-                <button class="blue-text-button button-p1">
-                    Очистить форму
-                </button>
+                <form action="">
+                    <p>
+                        <label for="who" class="lightgray-text label-p1">Отправитель</label>
+                        <input type="text" id="who" class="input-p1"  placeholder="От кого">
+                    </p>
+                    <p>
+                        <label for="bik-p1" class="lightgray-text label-p1">БИК</label>
+                        <input type="text" id="bik-p1" class="input-p1" placeholder="9 цифр">
+                    </p>
+                    <p>
+                        <label for="number-p2" class="lightgray-text label-p1">Номер счёта</label>
+                        <input type="text" id="number-p2" class="input-p1" placeholder="20 цифр">
+                    </p>
+                    <p>
+                        <label for="summary-p1" class="lightgray-text label-p1">Сумма</label>
+                        <input type="text" id="summary-p1" class="input-p1" placeholder="от 1000р до 75000р">
+                    </p>
+                    <p class="info-p1">
+                        Сформируйте платёжку и загрузите её
+                        в свой банк для подпиcи
+                    </p>
+                    <button class="gradient-button button-p1">
+                        Получить файл для интернет-банка
+                    </button>
+                    <button class="blue-text-button button-p1">
+                        Очистить форму
+                    </button>
+                </form>
             </article>
 
             <article class="page-2">
                 <!-- запросить платёж с карты своего интернет банка -->
-                <p>
-                    <label for="summary-p2" class="lightgray-text label-p2">Сумма</label>
-                    <input type="text" id="summary-p2" class="input-p2">
-                </p>
-                <p>
-                    <label for="comment" class="lightgray-text left label-p2">Коментарий</label>
-                    <input type="text" id="comment" class="input-p2">
-                </p>
-                <p>
-                    <label for="email" class="lightgray-text label-p2">Ваша эл. почта</label>
-                    <input type="text" id="email" class="input-p2">
-                </p>
-                <button class="gradient-button button-p2">
-                    Заплатить
-                </button>
-
+                <form class="bank-card-form">
+                    <div class="bank-card">
+                        <img src="./card-icon.png" alt="банковские карты" class="card-icon">
+                        <input type="text" id="card-date" class="card-input" placeholder="ММ/ГГ">
+                        <input type="text" id="card-number" class="card-input" placeholder="Номер карты">
+                        <input type="text" id="cvc" class="card-input" placeholder="CVC">
+                    </div>
+                </form>
+                <form class="inputs">
+                    <p>
+                        <label for="summary-p2" class="lightgray-text label-p2">Сумма</label>
+                        <input type="text" id="summary-p2" class="input-p2" placeholder="от 100р до 75000р">
+                    </p>
+                    <p>
+                        <label for="comment" class="lightgray-text left label-p2">Коментарий</label>
+                        <input type="text" id="comment" class="input-p2" placeholder="до 150 символов">
+                    </p>
+                    <p>
+                        <label for="email" class="lightgray-text label-p2">Ваша эл. почта</label>
+                        <input type="text" id="email" class="input-p2" placeholder="mail@.ru">
+                    </p>
+                    <button class="gradient-button button-p2">
+                        Заплатить
+                    </button>
+                    <button class="blue-text-button button-p3">
+                        Очистить форму
+                    </button>
+                </form>
             </article>
 
             <article class="page-3">
                 <!-- заплатить -->
-                <p>
-                    <label class="lightgray-text label-p3">Инн</label>
-                    <input type="text" id="inn" class="input-p3">
-                </p>
-                <p>
-                    <label class="lightgray-text label-p3">БИК</label>
-                    <input type="text" id="bik-p3" class="input-p3">
-                </p>
-                <p>
-                    <label class="lightgray-text label-p3">Номер счёта</label>
-                    <input type="text" id="number-p3" class="input-p3">
-                </p>
-                <p>
-                    <label class="lightgray-text label-p3">За что</label>
-                    <input type="text" id="" class="input-p3">
-                </p>
-                <input type="radio" name="nds" id="ten">
-                <input type="radio" name="nds" id="eighteen">
-                <input type="radio" name="nds" id="without">
-                <p>
-                    <label class="lightgray-text label-p3">Сколько</label>
-                    <input type="text" id="" class="input-p3">
-                </p>
-                <p>
-                    <label class="lightgray-text label-p3">Номер телефона</label>
-                    <input type="text" id="phone-number" class="input-p3">
-                </p>
-                <p>
-                    <label class="lightgray-text label-p3">Электронная почта</label>
-                    <input type="text" id="emil-p3" class="input-p3">
-                </p>
-                <button class="gradient-button button-p3">
-                    Получить файл для интернет-банка
-                </button>
-                <button class="blue-text-button button-p3">
-                    Очистить форму
-                </button>
+                <form action="">
+                    <p>
+                        <label class="lightgray-text label-p3">ИНН</label>
+                        <input type="text" id="inn" class="input-p3" placeholder="ИНН  получателя">
+                    </p>
+                    <p>
+                        <label class="lightgray-text label-p3">БИК</label>
+                        <input type="text" id="bik-p3" class="input-p3" placeholder="9 цифр">
+                    </p>
+                    <p>
+                        <label class="lightgray-text label-p3">Номер счёта</label>
+                        <input type="text" id="number-p3" class="input-p3" placeholder="20 цифр">
+                    </p>
+                    <p>
+                        <label for="nds" class="lightgray-text label-p3">НДС</label>
+                        <select id="nds" required class="select-p3">
+                            <option value="" disabled selected hidden>
+                                Выберите один из вариантов
+                            </option>
+                            <option>НДС 18%</option>
+                            <option>НДС 10%</option>
+                            <option>без НДС</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label class="lightgray-text label-p3">Сумма</label>
+                        <input type="text" id="" class="input-p3" placeholder="от 1000р до 75000р">
+                    </p>
+                    <p>
+                        <label class="lightgray-text label-p3">Номер телефона</label>
+                        <input type="text" id="phone-number" class="input-p3" placeholder="+79ХХХХХХХХХ">
+                    </p>
+                    <p>
+                        <label class="lightgray-text label-p3">Электронная почта</label>
+                        <input type="text" id="emil-p3" class="input-p3" placeholder="mail@.ru">
+                    </p>
+                    <button class="gradient-button button-p3">
+                        Получить файл для интернет-банка
+                    </button>
+                    <button class="blue-text-button button-p3">
+                        Очистить форму
+                    </button>
+                </form>
             </article>
         </section>
     </main>
 
     <footer class="footer">
-
-
         <input type="checkbox" id="hider">
-        <section class="full-information">
+        <section class="short-content">
             Испа́ния (исп. и галис. España), официально Короле́вство Испа́ния
             (исп. и галис. Reino de España МФА [ˈreino ðe esˈpaɲa])
             — суверенное государство на юго-западе Европы и частично
