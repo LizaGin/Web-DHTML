@@ -430,7 +430,7 @@ label[for='hider']
     .general-layout
     {
         display: grid;
-        grid-template: 'headline' 450px
+        grid-template: 'headline' 550px
             ' main  ' 500px
             ' main ' auto
             ' footer ' 250px;
@@ -449,6 +449,17 @@ label[for='hider']
     {
         width: 220px;
         height: 150px;
+    }
+
+        .bank
+    {
+        text-align: left;    
+    }
+
+        input[id='request-payment']:checked ~ input[id='personal-bank']:checked ~.bank .page-2
+    {
+        display: flex;
+        flex-direction: column;
     }
 
 }
